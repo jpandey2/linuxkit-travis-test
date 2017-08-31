@@ -5,7 +5,7 @@ before_install:
 install:
  - cd linuxkit
  - make 
- - make install
+ - sudo make install
 script:
  - sudo moby build linuxkit.yml
  - sudo linuxkit run linuxkit
