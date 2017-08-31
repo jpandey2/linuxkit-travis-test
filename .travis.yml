@@ -1,0 +1,13 @@
+language: python
+before_install:
+ - sudo apt get update \
+ && git clone https://github.com/linuxkit/linuxkit.git
+install:
+ - cd linuxkit \
+ && make \
+ && make install
+script:
+ - sudo moby build linuxkit.yml \
+ && sudo linuxkit run linuxkit
+
+
